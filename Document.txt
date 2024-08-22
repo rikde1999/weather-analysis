@@ -1,0 +1,9 @@
+Weather Data Fetching:
+    Integrate with a public weather API, such as WeatherAPI. -- Done
+    Fetch real-time weather data for a given city or set of cities. -- Done
+    The data should include useful information. -- Done
+Data Processing:
+    Parse and store the fetched weather data in a DB. -- Done
+    Implement data processing to calculate trends, such as average temperature over the last 24 hours, humidity trends, etc.
+Alert:
+    Show an alert if the weather condition is extreme.

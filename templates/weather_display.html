@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Data</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Weather Information</h2> 
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.city.label_tag }} {{ form.city }}
+        </div>
+        <button type="submit" class="btn btn-primary">Get Weather</button>
+    </form>
+    <a href="{% url 'trends' %}" class="btn btn-secondary mt-3">View Trends</a>
+
+    {% if alert_message %}
+        <div class="alert alert-warning mt-3">
+            {{ alert_message }}
+        </div>
+    {% endif %}
+
+    {% if weather_data %}
+        <div class="card mt-5">
+            <div class="card-header">
+                Weather in {{ weather_data.location.name }}, {{ weather_data.location.region }} ({{ weather_data.location.country }})
+            </div>
+            <div class="card-body">
+                <img src="https:{{ weather_data.condition.icon }}" alt="Weather Icon">
+                <p><strong>Temperature:</strong> {{ weather_data.temp_c }}°C (Fahrenheit: {{ weather_data.temp_f }}°F)</p>
+                <p><strong>Condition:</strong> {{ weather_data.condition.text }}</p>
+                <p><strong>IsDay :</strong> {{ weather_data.is_day }}</p>
+                <p><strong>Cloud :</strong> {{ weather_data.cloud }}</p>
+                <p><strong>Humidity:</strong> {{ weather_data.humidity }}%</p>
+                <p><strong>Wind:</strong> {{ weather_data.wind_kph }} kph, {{ weather_data.wind_dir }}</p>
+                <p><strong>Feels Like:</strong> {{ weather_data.feelslike_c }} °C </p>
+                <p><strong>Last Updated:</strong> {{ weather_data.last_updated }}</p>
+            </div>
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
