@@ -1,4 +1,3 @@
-# weather/tasks.py
 from weather.models import WeatherLocation, WeatherCondition, WeatherData
 from weather.utils import fetch_weather_data
 
