@@ -52,7 +52,6 @@ Thumbs.db
 data/
 __pycache__
 venv/
-.env
 GroupTravel/settings/
 */migrations/*.py
 Dockerfile
