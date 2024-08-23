@@ -54,5 +54,4 @@ __pycache__
 venv/
 GroupTravel/settings/
 */migrations/*.py
-Dockerfile
 env/
