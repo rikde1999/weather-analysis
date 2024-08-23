@@ -17,6 +17,7 @@
             {{ form.city.label_tag }} {{ form.city }}
         </div>
         <button type="submit" class="btn btn-primary">Get Trends</button>
+        <a href="{% url 'get_weather' %}" class="btn btn-success ml-2">Get Weather</a>
     </form>
 
     {% if error %}
