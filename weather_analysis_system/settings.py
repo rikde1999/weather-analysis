@@ -32,7 +32,7 @@ WEATHER_API_KEY = env("WEATHER_API_KEY")
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = [".onrender.com"]
+ALLOWED_HOSTS = [".onrender.com", "*"]
 
 
 # Application definition
@@ -82,24 +82,24 @@ WSGI_APPLICATION = "weather_analysis_system.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
-
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "weather_analysis",
-        "USER": "postgres",
-        "PASSWORD": "Pa55word!",
-        "HOST": "weather_db",  # This should match the service name in docker-compose
-        "PORT": 5432,
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "weather_analysis",
+#         "USER": "postgres",
+#         "PASSWORD": "Pa55word!",
+#         "HOST": "weather_db",  # This should match the service name in docker-compose
+#         "PORT": 5432,
+#     }
+# }
 
 
 # Password validation

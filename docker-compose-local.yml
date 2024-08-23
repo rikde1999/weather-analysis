@@ -16,22 +16,5 @@ services:
       - "9049:8000"
     container_name: weather-system-analysis
 
-    depends_on:
-      - weather_db
     stdin_open: true
     tty: true
-
-  weather_db:
-    image: postgres
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: Pa55word!
-      POSTGRES_DB: weather_analysis
-    ports:
-      - "5434:5432"
-    container_name: weather_db
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  postgres_data:
