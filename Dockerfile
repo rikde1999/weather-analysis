@@ -7,3 +7,4 @@ COPY requirements.txt /weather_analysis_system/
 RUN pip install -r requirements.txt
 COPY . /weather_analysis_system/
 EXPOSE 8000
+ENTRYPOINT ["gunicorn", 'weather_analysis_system.wsgi']
